@@ -1,0 +1,73 @@
+<DOCTYPE html>
+ <html>
+<head>
+      <title> Membuat Biodata </title>
+</head>
+<body>
+      <h1 align="center">BIODATA DIRI</h1>
+	  <table border="1" cellspacing="0" align="center" cellpadding="5" width="800">
+	  <tr align="center" bgcolor="yellow">
+	           <td>DATA DIRI</td>
+			   <td>KETERANGAN</td>
+	  </tr>
+	  <tr>
+	           <td>Nama</td>
+			   <td>Mozakiyatun Nufus</td>
+	  </tr>
+	    <tr>
+	           <td>Tempat Tanggal Lahir</td>
+			   <td>Banyuwangi,10 November 2005</td>
+	  </tr>
+	    <tr>
+	           <td>Jenis Kelamin</td>
+			   <td>Perempuan</td>
+	  </tr>
+	    <tr>
+	           <td>Alamat</td>
+			   <td>Dusun Kedawung Desa PondokNongko</td>
+	  </tr>
+	    <tr>
+	           <td>Agama</td>
+			   <td>Islam</td>
+	  </tr>
+	   <tr>
+	           <td>Nomor Telepon</td>
+			   <td>087854444768</td>
+	  </tr>
+	   <tr>
+	           <td>Email</td>
+			   <td>mozakiyatunnufus@gmail.com</td>
+	  </tr>
+	    <tr>
+	           <td>Hobi</td>
+			   <td>Traveling</td>
+	  </tr>
+	  
+	 	  <table border="1" cellspacing="0" align="center" cellpadding="5" width="800">
+	  <tr align="center" bgcolor="yellow">
+	           <td>PENDIDIKAN</td>
+	  </tr>
+	  <tr align="center">
+	  
+	           <td>TK KHOTIJAH       : 2011-2012</td>
+	   </tr>
+	    <tr align="center">
+	  
+	           <td>MI MIFTAHUL HUDA  : 2013-2018 </td>
+	   </tr>
+	    <tr align="center">
+	  
+	           <td>MTS NURUL IMAN    : 2018-2021</td>
+	   </tr>
+	    <tr align="center">
+	  
+	           <td>SMKN 1 BANYUWANGI : 2021-2024</td>
+	   </tr>
+	    <tr align="center">
+	  
+	           <td>STIKOM BANYUWANGI : 2024-sekarang</td>
+	   </tr>
+	  </tr>
+
+</body>
+</html>
