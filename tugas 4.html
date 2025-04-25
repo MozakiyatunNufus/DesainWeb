@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Form</title>
+</head>
+<body>
+
+<h2 align="center">Form Pendaftaran</h2>
+<form action="" method="POST">
+    <table>
+        <tr>
+            <td>Nama:</td>
+            <td><input type="text" name="nama" required></td>
+        </tr>
+        
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" required></td>
+        </tr>
+        
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" required></td>
+        </tr>
+        
+        <tr>
+            <td>Biografi:</td>
+            <td><textarea name="biografi" rows="4"></textarea></td>
+        </tr>
+        
+        <tr>
+            <td>Jenis Kelamin:</td>
+            <td>
+                <input type="radio" name="jenis_kelamin" value="Laki-Laki" required/>Laki-Laki
+                <input type="radio" name="jenis_kelamin" value="Perempuan"/>Perempuan
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Agama:</td>
+            <td>
+                <select name="agama" required>
+                    <option value="">Pilih salah satu</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Budha">Budha</option>
+                    <option value="Kristen">Kristen</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Hobi:</td>
+            <td>
+                <input type="checkbox" name="hobi[]" value="Membaca"/>Membaca
+                <input type="checkbox" name="hobi[]" value="Menulis"/>Menulis
+                <input type="checkbox" name="hobi[]" value="Memasak"/>Memasak
+            </td>
+        </tr>
+        
+        <tr>
+            <td for="date">Date:</td>
+            <td><input type="date" id="date" name="date" required></td>
+        </tr>
+        
+        <tr>
+            <td><button type="submit">Submit</button></td>
+            <td><button type="reset">Reset</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
