@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D Transform Examples</title>
+    <style>
+        /* Reset dan Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --success-color: #2ecc71;
+            --purple-color: #9b59b6;
+            --dark-color: #2c3e50;
+            --light-bg: #ecf0f1;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.2);
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #bdc3c7 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--dark-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--purple-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        /* Grid Layout */
+        .transform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Base Card Style */
+        .transform-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .transform-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            font-size: 1.3rem;
+        }
+
+        .transform-card p {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Transform Elements */
+        .transform-element {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            margin: 0 auto 1rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        /* 1. Translate Transform */
+        .translate-demo .transform-element:hover {
+            transform: translateX(50px);
+            background: linear-gradient(45deg, var(--success-color), var(--accent-color));
+        }
+
+        /* 2. Scale Transform */
+        .scale-demo .transform-element:hover {
+            transform: scale(1.3);
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+        }
+
+        /* 3. Rotate Transform */
+        .rotate-demo .transform-element:hover {
+            transform: rotate(45deg);
+            background: linear-gradient(45deg, var(--purple-color), var(--primary-color));
+        }
+
+        /* 4. Skew Transform */
+        .skew-demo .transform-element:hover {
+            transform: skewX(20deg);
+            background: linear-gradient(45deg, var(--secondary-color), var(--purple-color));
+        }
+
+        /* 5. Multiple Transforms */
+        .multiple-demo .transform-element:hover {
+            transform: translateY(-20px) scale(1.1) rotate(10deg);
+            background: linear-gradient(45deg, var(--success-color), var(--primary-color));
+        }
+
+        /* 6. Matrix Transform */
+        .matrix-demo .transform-element:hover {
+            transform: matrix(1.2, 0.3, -0.3, 1.2, 20, 10);
+            background: linear-gradient(45deg, var(--accent-color), var(--purple-color));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">CSS 2D Transform</h1>
+            <p class="subtitle">Koleksi contoh transformasi 2D CSS yang interaktif dan menarik</p>
+        </div>
+
+        <!-- Basic Transform Examples -->
+        <div class="transform-grid">
+            <!-- Translate -->
+            <div class="transform-card translate-demo">
+                <h3>Translate</h3>
+                <p>Memindahkan elemen dari posisi aslinya</p>
+                <div class="transform-element">X</div>
+                <small>Hover untuk melihat efek translateX(50px)</small>
+            </div>
+
+            <!-- Scale -->
+            <div class="transform-card scale-demo">
+                <h3>Scale</h3>
+                <p>Mengubah ukuran elemen</p>
+                <div class="transform-element">S</div>
+                <small>Hover untuk melihat efek scale(1.3)</small>
+            </div>
+
+            <!-- Rotate -->
+            <div class="transform-card rotate-demo">
+                <h3>Rotate</h3>
+                <p>Memutar elemen dengan sudut tertentu</p>
+                <div class="transform-element">R</div>
+                <small>Hover untuk melihat efek rotate(45deg)</small>
+            </div>
+
+            <!-- Skew -->
+            <div class="transform-card skew-demo">
+                <h3>Skew</h3>
+                <p>Memiringkan elemen pada sumbu tertentu</p>
+                <div class="transform-element">K</div>
+                <small>Hover untuk melihat efek skewX(20deg)</small>
+            </div>
+
+            <!-- Multiple -->
+            <div class="transform-card multiple-demo">
+                <h3>Multiple</h3>
+                <p>Kombinasi beberapa transformasi</p>
+                <div class="transform-element">M</div>
+                <small>Hover untuk kombinasi translate, scale, rotate</small>
+            </div>
+
+            <!-- Matrix -->
+            <div class="transform-card matrix-demo">
+                <h3>Matrix</h3>
+                <p>Transformasi menggunakan matrix 2D</p>
+                <div class="transform-element">T</div>
+                <small>Hover untuk melihat efek matrix transform</small>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
