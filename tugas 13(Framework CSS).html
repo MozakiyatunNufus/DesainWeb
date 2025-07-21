@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Framework</title>
+    <style>
+        /* ================================================
+           MODERN CSS FRAMEWORK
+           ================================================ */
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* ================================================
+           CONTAINER SYSTEM
+           ================================================ */
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container-fluid {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .container-sm {
+            max-width: 576px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container-md {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container-lg {
+            max-width: 992px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ================================================
+           GRID SYSTEM
+           ================================================ */
+
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-auto {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-main-sidebar {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .grid-sidebar-main {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .gap-sm {
+            gap: 10px;
+        }
+
+        .gap-md {
+            gap: 20px;
+        }
+
+        .gap-lg {
+            gap: 40px;
+        }
+
+        /* ================================================
+           CARDS
+           ================================================ */
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-sm {
+            padding: 20px;
+        }
+
+        .card-lg {
+            padding: 40px;
+        }
+
+        .card-flat {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-elevated {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ================================================
+           BUTTONS
+           ================================================ */
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #dee2e6;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+
+        .btn-block {
+            width: 100%;
+            display: block;
+        }
+
+        /* ================================================
+           NAVIGATION
+           ================================================ */
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 0;
+        }
+
+        .nav-link {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 18px 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* ================================================
+           HEADER/HERO SECTIONS
+           ================================================ */
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-sm {
+            padding: 60px 20px;
+        }
+
+        .hero-lg {
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ================================================
+           IMAGES & MEDIA
+           ================================================ */
+
+        .img-placeholder {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .img-placeholder:hover::before {
+            left: 100%;
+        }
+
+        .img-responsive {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* ================================================
+           TYPOGRAPHY
+           ================================================ */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        h5 {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h6 {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-primary {
+            color: #667eea;
+        }
+
+        .text-secondary {
+            color: #666;
+        }
+
+        .text-success {
+            color: #11998e;
+        }
+
+        .text-danger {
+            color: #ff6b6b;
+        }
+
+        .text-muted {
+            color: #999;
+        }
+
+        /* ================================================
+           SPACING UTILITIES
+           ================================================ */
+
+        .m-0 {
+            margin: 0;
+        }
+
+        .m-1 {
+            margin: 10px;
+        }
+
+        .m-2 {
+            margin: 20px;
+        }
+
+        .m-3 {
+            margin: 30px;
+        }
+
+        .m-4 {
+            margin: 40px;
+        }
+
+        .mt-0 {
+            margin-top: 0;
+        }
+
+        .mt-1 {
+            margin-top: 10px;
+        }
+
+        .mt-2 {
+            margin-top: 20px;
+        }
+
+        .mt-3 {
+            margin-top: 30px;
+        }
+
+        .mt-4 {
+            margin-top: 40px;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .mb-1 {
+            margin-bottom: 10px;
+        }
+
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+
+        .mb-3 {
+            margin-bottom: 30px;
+        }
+
+        .mb-4 {
+            margin-bottom: 40px;
+        }
+
+        .p-0 {
+            padding: 0;
+        }
+
+        .p-1 {
+            padding: 10px;
+        }
+
+        .p-2 {
+            padding: 20px;
+        }
+
+        .p-3 {
+            padding: 30px;
+        }
+
+        .p-4 {
+            padding: 40px;
+        }
+
+        /* ================================================
+           ANIMATIONS
+           ================================================ */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+            animation-fill-mode: both;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+            animation-fill-mode: both;
+        }
+
+        /* ================================================
+           FOOTER
+           ================================================ */
+
+        .footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer h2 {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+
+        /* ================================================
+           RESPONSIVE DESIGN
+           ================================================ */
+
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4,
+            .grid-main-sidebar,
+            .grid-sidebar-main {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar-container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .navbar-nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-link {
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- DEMO PAGE -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-brand">Framework CSS</a>
+            <ul class="navbar-nav">
+                <li><a href="#hero" class="nav-link">Beranda</a></li>
+                <li><a href="#components" class="nav-link">Komponen</a></li>
+                <li><a href="#grid" class="nav-link">Grid</a></li>
+                <li><a href="#examples" class="nav-link">Contoh</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Framework CSS</h1>
+            <p>Framework CSS yang fleksibel dan responsif</p>
+            <div class="mt-4">
+                <a href="#components" class="btn btn-primary btn-lg">Mulai Sekarang</a>
+                <a href="#examples" class="btn btn-secondary btn-lg">Lihat Contoh</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="container mt-4">
+        <h2 class="text-center mb-4">Komponen Utama</h2>
+
+        <!-- Button Examples -->
+        <div class="card mb-4">
+            <h3>Buttons</h3>
+            <div class="mt-3">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary btn-sm">Small</button>
+                <button class="btn btn-primary">Normal</button>
+                <button class="btn btn-primary btn-lg">Large</button>
+            </div>
+        </div>
+
+        <!-- Cards Examples -->
+        <div class="grid grid-3 gap-lg">
+            <div class="card animate-fadeInUp">
+                <h3>Card Standar</h3>
+                <p>Ini adalah contoh card dengan shadow dan hover effect yang halus.</p>
+                <button class="btn btn-primary">Action</button>
+            </div>
+            <div class="card card-flat animate-fadeInUp animate-delay-1">
+                <h3>Card Flat</h3>
+                <p>Card dengan shadow yang lebih tipis untuk tampilan yang subtle.</p>
+                <button class="btn btn-secondary">Action</button>
+            </div>
+            <div class="card card-elevated animate-fadeInUp animate-delay-2">
+                <h3>Card Elevated</h3>
+                <p>Card dengan shadow yang lebih tebal untuk emphasis yang lebih kuat.</p>
+                <button class="btn btn-success">Action</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid System -->
+    <section id="grid" class="container mt-4">
+        <div class="card">
+            <h2>Grid System</h2>
+            <p class="mb-4">Sistem grid yang fleksibel dengan berbagai layout</p>
+
+            <h4 class="mt-4">2 Kolom</h4>
+            <div class="grid grid-2 gap-md">
+                <div class="img-placeholder" style="height: 100px;">Kolom 1</div>
+                <div class="img-placeholder" style="height: 100px;">Kolom 2</div>
+            </div>
+
+            <h4 class="mt-4">3 Kolom</h4>
+            <div class="grid grid-3 gap-md">
+                <div class="img-placeholder" style="height: 80px;">Col 1</div>
+                <div class="img-placeholder" style="height: 80px;">Col 2</div>
+                <div class="img-placeholder" style="height: 80px;">Col 3</div>
+            </div>
+
+            <h4 class="mt-4">Main + Sidebar</h4>
+            <div class="grid grid-main-sidebar gap-lg">
+                <div class="img-placeholder" style="height: 120px;">Main Content</div>
+                <div class="img-placeholder" style="height: 120px;">Sidebar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Example -->
+    <section id="examples" class="container mt-4">
+        <h2 class="text-center mb-4">Contoh Penggunaan - Blog Layout</h2>
+
+        <div class="grid grid-main-sidebar gap-lg">
+            <main>
+                <article class="card mb-4">
+                    <h2>Artikel Terbaru</h2>
+                    <h5>Dipublikasikan pada 21 Juli 2025</h5>
+                    <div class="img-placeholder" style="height:200px;">Gambar Artikel</div>
+                    <p>Ini adalah contoh artikel blog menggunakan framework CSS yang baru saja kita buat. Framework ini
+                        menyediakan komponen-komponen yang fleksibel dan mudah digunakan.</p>
+                    <p>Dengan sistem grid yang responsif, navigation yang modern, dan animasi yang halus, framework ini
+                        cocok untuk berbagai jenis website.</p>
+                    <button class="btn btn-primary">Baca Selengkapnya</button>
+                </article>
+
+                <article class="card">
+                    <h2>Tips Menggunakan Framework</h2>
+                    <h5>Dipublikasikan pada 20 Juli 2025</h5>
+                    <div class="img-placeholder" style="height:200px;">Tips & Tricks</div>
+                    <p>Beberapa tips untuk menggunakan framework CSS ini secara maksimal dalam proyek Anda.</p>
+                    <button class="btn btn-secondary">Baca Selengkapnya</button>
+                </article>
+            </main>
+
+            <aside>
+                <div class="card mb-4">
+                    <h3>Tentang Framework</h3>
+                    <div class="img-placeholder" style="height:100px;">Logo Framework</div>
+                    <p>Framework CSS modern dengan fokus pada kemudahan penggunaan dan fleksibilitas.</p>
+                </div>
+
+                <div class="card mb-4">
+                    <h3>Komponen Tersedia</h3>
+                    <div class="img-placeholder" style="height:60px;">Grid System</div>
+                    <div class="img-placeholder" style="height:60px;">Cards</div>
+                    <div class="img-placeholder" style="height:60px;">Buttons</div>
+                    <div class="img-placeholder" style="height:60px;">Navigation</div>
+                </div>
+
+                <div class="card">
+                    <h3>Dokumentasi</h3>
+                    <p>Pelajari lebih lanjut tentang cara menggunakan setiap komponen dalam framework ini.</p>
+                    <button class="btn btn-primary btn-block">Lihat Docs</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2>© 2025 Framework CSS</h2>
+        </div>
+    </footer>
+</body>
+
+</html>
